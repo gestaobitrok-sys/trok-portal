@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portal TROK Service</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div id="toast"></div>
+
+<!-- LOGIN -->
+<main id="telaLogin" class="login hidden">
+  <form id="formLogin" class="card loginCard" autocomplete="on">
+    <div class="logo">TROK<span>Service</span></div>
+    <h1>Portal de sistemas</h1>
+    <p class="muted">Entre com seu e-mail e senha.</p>
+    <label>E-mail<input id="lgEmail" type="email" autocomplete="username" required></label>
+    <label>Senha<input id="lgSenha" type="password" autocomplete="current-password" required></label>
+    <div id="lgErro" class="erro"></div>
+    <button class="btn" type="submit">Entrar</button>
+  </form>
+</main>
+
+<!-- PORTAL -->
+<div id="telaPortal" class="hidden">
+  <header class="topo">
+    <div class="logo small">TROK<span>Service</span></div>
+    <div class="topoDir">
+      <span id="nomeUsuario" class="muted"></span>
+      <button class="btn sec" id="btnSenha">Trocar senha</button>
+      <button class="btn sec" id="btnSair">Sair</button>
+    </div>
+  </header>
+  <nav id="abas" class="abas hidden">
+    <button class="aba ativa" data-aba="sites">Meus sistemas</button>
+    <button class="aba" data-aba="usuarios">Usuários</button>
+    <button class="aba" data-aba="cadastroSites">Cadastro de sites</button>
+  </nav>
+
+  <section id="painelSites" class="painel">
+    <h2>Escolha o sistema</h2>
+    <div id="gradeSites" class="grade"></div>
+    <p id="semSites" class="muted hidden">Nenhum sistema liberado para você ainda. Fale com o administrador.</p>
+  </section>
+
+  <section id="painelUsuarios" class="painel hidden">
+    <div class="linhaTitulo"><h2>Usuários</h2><button class="btn" id="novoUsuario">+ Novo usuário</button></div>
+    <div id="listaUsuarios"></div>
+  </section>
+
+  <section id="painelCadSites" class="painel hidden">
+    <div class="linhaTitulo"><h2>Sites cadastrados</h2><button class="btn" id="novoSite">+ Novo site</button></div>
+    <div id="listaCadSites"></div>
+  </section>
+</div>
+
+<!-- MODAL -->
+<div id="modal" class="modalFundo hidden"><div class="modalCaixa card" id="modalCaixa"></div></div>
+
+<script src="app.js"></script>
+</body>
+</html>
